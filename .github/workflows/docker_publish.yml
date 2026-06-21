@@ -8,7 +8,7 @@ name: Build & Publish Docker Image
 # Build context: docker/production/ (Dockerfile + all support scripts).
 #
 # Required repository secrets:
-#   DOCKERHUB_USERNAME  Docker Hub user / org with push access to webkul/bagisto
+#   DOCKERHUB_USERNAME  Docker Hub user / org with push access to jdamiry/bagisto
 #   DOCKERHUB_TOKEN     Docker Hub access token (NOT a password)
 # ============================================================================
 
@@ -24,7 +24,7 @@ on:
         type: string
 
 env:
-  IMAGE_NAME: webkul/bagisto
+  IMAGE_NAME: jdamiry/bagisto
   BUILD_CONTEXT: docker/production
 
 jobs:
