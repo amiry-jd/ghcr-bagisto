@@ -11,6 +11,8 @@
 
 FROM ubuntu:24.04
 
+ARG REPOSITORY=https://github.com/amiry-jd/ghcr-bagisto.git
+
 ARG BAGISTO_VERSION=v2.4.0
 ARG PHP_VERSION=8.3
 
@@ -109,7 +111,7 @@ COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 WORKDIR /var/www/bagisto
 
 RUN git clone --depth 1 --branch ${BAGISTO_VERSION} \
-        https://github.com/bagisto/bagisto.git . \
+        ${REPOSITORY} . \
     && composer install \
         --no-dev \
         --no-interaction \
